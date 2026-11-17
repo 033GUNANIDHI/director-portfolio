@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GUNANIDHI M | Film Director & Visual Storyteller</title>
+  <meta name="description" content="Official cinematic portfolio of Gunanidhi M (Guna M) — Film Director, Cinematographer, Editor & Screenwriter crafting emotionally resonant and visceral cinema." />
+
+  <!-- Google Fonts: Cinzel (Epic Cinema Serif), Syne (Bold Display), Plus Jakarta Sans (Body), JetBrains Mono (Tech/HUD) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Film Grain Overlay -->
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <!-- Cinematic Viewfinder HUD Corners -->
+  <div class="viewfinder-hud" aria-hidden="true">
+    <div class="hud-corner hud-top-left"></div>
+    <div class="hud-corner hud-top-right"></div>
+    <div class="hud-corner hud-bottom-left"></div>
+    <div class="hud-corner hud-bottom-right"></div>
+  </div>
+
+  <!-- Custom Cinematic Cursor -->
+  <div class="custom-cursor-dot" aria-hidden="true"></div>
+  <div class="custom-cursor-ring" aria-hidden="true">
+    <span class="cursor-text"></span>
+  </div>
+
+  <!-- ==========================================================================
+       CLAPPERBOARD PRELOADER
+       ========================================================================== -->
+  <div class="preloader" id="preloader">
+    <div class="clapperboard-box">
+      <div class="clapper-stripes"></div>
+      <h2 class="clapper-title">GUNANIDHI M</h2>
+      <p class="clapper-sub">DIRECTORIAL ARCHIVE</p>
+
+      <div class="clapper-grid">
+        <div class="clapper-cell">
+          <span>SCENE</span>
+          <strong>01</strong>
+        </div>
+        <div class="clapper-cell">
+          <span>TAKE</span>
+          <strong>01</strong>
+        </div>
+        <div class="clapper-cell">
+          <span>FPS</span>
+          <strong>24</strong>
+        </div>
+      </div>
+
+      <div class="clapper-status">
+        <span class="rec-pulse"></span>
+        <span>SOUND... CAMERA... ACTION!</span>
+      </div>
+
+      <button class="skip-intro-btn" id="skipIntroBtn">ENTER CINEMA [ESC]</button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       DIRECTOR MONITOR TOP HUD
+       ========================================================================== -->
+  <header class="director-hud-top">
+    <div class="hud-left">
+      <div class="hud-rec-badge">
+        <span class="dot"></span>
+        <span>REC</span>
+      </div>
+      <span class="hud-timecode" id="cinemaTimecode">00:04:24:18</span>
+      <span class="hud-shutter">1/48s</span>
+    </div>
+
+    <div class="hud-center">
+      <span>ASPECT: 2.39:1 SCOPE</span>
+      <span>•</span>
+      <span>COLOR: ARRI LOG-C</span>
+      <span>•</span>
+      <span>LENS: ANAMORPHIC 50MM</span>
+    </div>
+
+    <div class="hud-right">
+      <span class="hud-fps">24.000 FPS</span>
+      <button class="hud-sound-toggle" id="soundToggleBtn" title="Toggle Cinematic Atmosphere Audio">
+        <div class="sound-bars" id="soundBars">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <span id="soundLabel">CINEMA AUDIO: OFF</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       PRIMARY NAVIGATION
+       ========================================================================== -->
+  <nav class="cinematic-navbar">
+    <a href="#home" class="brand-logo">
+      <span class="brand-text">GUNANIDHI M</span>
+      <span class="brand-badge">DIRECTOR</span>
+    </a>
+
+    <button class="mobile-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+
+    <ul class="nav-menu">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">Vision</a></li>
+      <li><a href="#works" class="nav-link">Filmography</a></li>
+      <li><a href="#skills" class="nav-link">Craft</a></li>
+      <li><a href="#favorites" class="nav-link">Inspirations</a></li>
+      <li><a href="#contact" class="nav-cta-btn">Get In Touch</a></li>
+    </ul>
+  </nav>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section class="hero-section" id="home">
+    <div class="hero-background-art"></div>
+    <div class="hero-light-beam"></div>
+
+    <div class="hero-container">
+      <div class="hero-badge-pill">
+        <span class="badge-tag">CINEMA DIRECTORIALS</span>
+        <span class="badge-dot"></span>
+        <span class="badge-text">VISUAL STORYTELLER &bull; DOP &bull; EDITOR</span>
+      </div>
+
+      <h1 class="hero-main-title">
+        STORIES CARVED IN <span class="gradient-text">LIGHT & SHADOW</span>
+      </h1>
+
+      <p class="hero-director-sub">A Film by Gunanidhi M</p>
+
+      <p class="hero-description">
+        Crafting high-impact narratives that delve deep into raw human emotions, psychological tension, and bold visual grammar. From script breakdown to the cutting room, breathing life into cinema.
+      </p>
+
+      <div class="hero-action-group">
+        <a href="#works" class="btn-primary">
+          <span>Explore Filmography</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <button class="btn-outline open-video-modal-btn" 
+                data-video-url="https://www.youtube.com/embed/62Mt5LMpP2o?autoplay=1"
+                data-film-title="VILLANGATHA VILLAKAM (Drama Short)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span>Watch Latest Film</span>
+        </button>
+
+        <a href="#contact" class="btn-outline">
+          <span>Production Inquiry</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Ticker Film Strip -->
+    <div class="hero-bottom-ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span class="ticker-item">LOOP THRILLER <span class="star">&#9733;</span></span>
+        <span class="ticker-item">PSYCHOLOGICAL REALISM <span class="star">&#9733;</span></span>
+        <span class="ticker-item">CINEMATOGRAPHY (DOP) <span class="star">&#9733;</span></span>
+        <span class="ticker-item">NON-LINEAR EDITING <span class="star">&#9733;</span></span>
+        <span class="ticker-item">MOTIVATIONAL DRAMA <span class="star">&#9733;</span></span>
+        <span class="ticker-item">ORIGINAL SCREENPLAYS <span class="star">&#9733;</span></span>
+        <span class="ticker-item">KEY ART & POSTER DESIGN <span class="star">&#9733;</span></span>
+        <!-- Duplicate for seamless looping -->
+        <span class="ticker-item">LOOP THRILLER <span class="star">&#9733;</span></span>
+        <span class="ticker-item">PSYCHOLOGICAL REALISM <span class="star">&#9733;</span></span>
+        <span class="ticker-item">CINEMATOGRAPHY (DOP) <span class="star">&#9733;</span></span>
+        <span class="ticker-item">NON-LINEAR EDITING <span class="star">&#9733;</span></span>
+        <span class="ticker-item">MOTIVATIONAL DRAMA <span class="star">&#9733;</span></span>
+        <span class="ticker-item">ORIGINAL SCREENPLAYS <span class="star">&#9733;</span></span>
+        <span class="ticker-item">KEY ART & POSTER DESIGN <span class="star">&#9733;</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ABOUT / DIRECTOR'S VISION
+       ========================================================================== -->
+  <section class="section-wrapper" id="about">
+    <div class="section-header">
+      <span class="section-eyebrow">// THE VISION & PHILOSOPHY</span>
+      <h2 class="section-title">BEHIND THE LENS</h2>
+      <p class="section-subtitle">Bridging emotional authenticity with uncompromising cinematic framing.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-portrait-card">
+        <div class="portrait-frame">
+          <img src="assets/director_guna.jpg" alt="Director Gunanidhi M" class="portrait-img" />
+          <div class="portrait-film-badge">
+            <div class="badge-info">
+              <h4>GUNANIDHI M</h4>
+              <p>DIRECTOR &bull; STORYTELLER</p>
+            </div>
+            <div class="director-specs-pill">ID: GM-08</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <blockquote class="vision-quote">
+          &ldquo;Cinema is not merely what is displayed on the screen—it is the raw emotion that stays with the viewer long after the lights turn back on.&rdquo;
+        </blockquote>
+
+        <p class="about-paragraph">
+          I am an aspiring film director driven by an obsessive commitment to cinematic narrative. My approach revolves around visceral human struggles, authentic actor performances, and rigorous visual composition.
+        </p>
+
+        <p class="about-paragraph">
+          Filmmaking for me is an all-encompassing craft: from shaping the philosophical core of a screenplay to setting up lighting ratios on set, operating the camera as a DOP, and discovering the soul of the film at the editing timeline.
+        </p>
+
+        <div class="about-highlights">
+          <div class="highlight-stat-card">
+            <div class="stat-number">03<span>+</span></div>
+            <div class="stat-label">Directorial Works</div>
+          </div>
+          <div class="highlight-stat-card">
+            <div class="stat-number">100<span>%</span></div>
+            <div class="stat-label">Hands-on Craft</div>
+          </div>
+          <div class="highlight-stat-card">
+            <div class="stat-number">24<span> FPS</span></div>
+            <div class="stat-label">Visual Obsession</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SELECTED WORKS / FILMOGRAPHY
+       ========================================================================== -->
+  <section class="section-wrapper darker" id="works">
+    <div class="section-header">
+      <span class="section-eyebrow">// SELECTED FILMOGRAPHY</span>
+      <h2 class="section-title">FEATURED WORKS</h2>
+      <p class="section-subtitle">A showcase of short films exploring time loops, human grit, and dramatic tensions.</p>
+    </div>
+
+    <div class="works-grid">
+
+      <!-- WORK 1: ORU VANNOLIYIN KANAVU -->
+      <article class="work-card">
+        <div class="work-poster-wrapper">
+          <img src="assets/work_oru_vannoli.jpg" alt="Oru Vannoliyin Kanavu Poster" class="work-poster-img" />
+          <span class="work-badge-genre">Loop Thriller</span>
+          <span class="work-badge-platform">Drive Reel</span>
+          <div class="play-overlay-icon" aria-hidden="true">&#9658;</div>
+        </div>
+        <div class="work-body">
+          <h3 class="work-title">ORU VANNOLIYIN KANAVU</h3>
+          <p class="work-logline">
+            A mind-bending loop thriller unraveling how choices echo across fragmented timelines. Built with tight claustrophobic framing and pulsating sound design.
+          </p>
+          <div class="work-credits-row">
+            <div>WRITER &bull; DIRECTOR: <span>GUNA M</span></div>
+          </div>
+          <div class="work-actions">
+            <a href="https://drive.google.com/file/d/1bEl5cZiIJSzdjRJm0uPt24b8yy1JJyv8/view?usp=drive_link" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn-work-watch">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              <span>Watch on Drive</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- WORK 2: MUTKALINVALI ONDRUM MARANAMILLAI -->
+      <article class="work-card">
+        <div class="work-poster-wrapper">
+          <img src="assets/work_mutkalinvali.jpg" alt="Mutkalinvali Ondrum Maranamillai Poster" class="work-poster-img" />
+          <span class="work-badge-genre">Motivational Drama</span>
+          <span class="work-badge-platform">Drive Reel</span>
+          <div class="play-overlay-icon" aria-hidden="true">&#9658;</div>
+        </div>
+        <div class="work-body">
+          <h3 class="work-title">MUTKALINVALI ONDRUM MARANAMILLAI</h3>
+          <p class="work-logline">
+            "The pain of thorns is never the end of life." An intimate exploration of emotional survival, human resilience, and triumphing over personal abyss.
+          </p>
+          <div class="work-credits-row">
+            <div>DIRECTOR &bull; CINEMATOGRAPHY: <span>GUNA M</span></div>
+          </div>
+          <div class="work-actions">
+            <a href="https://drive.google.com/file/d/1ApeSGpJ_SfDP4ZjDPbaBAepKxGKvG93o/view?usp=drive_link" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn-work-watch">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              <span>Watch on Drive</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- WORK 3: VILLANGATHA VILLAKAM (Interactive Cinema Player) -->
+      <article class="work-card">
+        <div class="work-poster-wrapper">
+          <img src="assets/work_villangatha.jpg" alt="Villangatha Villakam Poster" class="work-poster-img" />
+          <span class="work-badge-genre">Narrative Drama</span>
+          <span class="work-badge-platform">YouTube Premiere</span>
+          <div class="play-overlay-icon" aria-hidden="true">&#9658;</div>
+        </div>
+        <div class="work-body">
+          <h3 class="work-title">VILLANGATHA VILLAKAM</h3>
+          <p class="work-logline">
+            A gripping human conflict narrated through razor-sharp dialogue, layered motivations, and escalating dramatic confrontations.
+          </p>
+          <div class="work-credits-row">
+            <div>DIRECTION &bull; SCREENPLAY: <span>GUNA M</span></div>
+          </div>
+          <div class="work-actions">
+            <button class="btn-work-watch open-video-modal-btn" 
+                    data-video-url="https://www.youtube.com/embed/62Mt5LMpP2o?autoplay=1"
+                    data-film-title="VILLANGATHA VILLAKAM (Short Film)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <span>Watch Film (Player)</span>
+            </button>
+            <a href="https://youtu.be/62Mt5LMpP2o" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn-work-watch" 
+               style="flex: 0 0 auto; padding: 11px 16px;" 
+               title="Open directly on YouTube">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       DIRECTOR'S CRAFT & SKILLS
+       ========================================================================== -->
+  <section class="section-wrapper" id="skills">
+    <div class="section-header">
+      <span class="section-eyebrow">// THE DIRECTORIAL TOOLKIT</span>
+      <h2 class="section-title">THE CRAFT</h2>
+      <p class="section-subtitle">Every dimension of storytelling mastered to translate raw ideas into screen magic.</p>
+    </div>
+
+    <div class="craft-grid">
+
+      <!-- SKILL 1: EDITING -->
+      <div class="craft-card">
+        <div class="craft-image-box">
+          <img src="assets/skill_editing.jfif" alt="Non-Linear Video Editing" />
+          <span class="craft-tag-number">01</span>
+        </div>
+        <div class="craft-content">
+          <h3 class="craft-title">Non-Linear Editing</h3>
+          <p class="craft-desc">Sculpting pacing, dramatic pauses, match cuts, and montage rhythms to amplify emotional momentum.</p>
+          <div class="craft-badges-row">
+            <span class="craft-pill">Timeline Rhythm</span>
+            <span class="craft-pill">Montage</span>
+            <span class="craft-pill">Audio Sync</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILL 2: CINEMATOGRAPHY (DOP) -->
+      <div class="craft-card">
+        <div class="craft-image-box">
+          <img src="assets/skill_dop.jfif" alt="Cinematography & Lighting" />
+          <span class="craft-tag-number">02</span>
+        </div>
+        <div class="craft-content">
+          <h3 class="craft-title">Cinematography (DOP)</h3>
+          <p class="craft-desc">Anamorphic framing, chiaroscuro lighting, camera angles, and movement that mirror character states.</p>
+          <div class="craft-badges-row">
+            <span class="craft-pill">Framing & Ratio</span>
+            <span class="craft-pill">Lighting Moods</span>
+            <span class="craft-pill">Gimbal & Dolly</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILL 3: SCREENWRITING -->
+      <div class="craft-card">
+        <div class="craft-image-box">
+          <img src="assets/skill_writing.jfif" alt="Screenwriting & Storyboarding" />
+          <span class="craft-tag-number">03</span>
+        </div>
+        <div class="craft-content">
+          <h3 class="craft-title">Screenwriting</h3>
+          <p class="craft-desc">Character psychology, three-act and non-linear arcs, thematic depth, and subtext-rich natural dialogue.</p>
+          <div class="craft-badges-row">
+            <span class="craft-pill">Story Arcs</span>
+            <span class="craft-pill">Dialogue</span>
+            <span class="craft-pill">Scene Blocking</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILL 4: POSTER DESIGNING -->
+      <div class="craft-card">
+        <div class="craft-image-box">
+          <img src="assets/skill_poster.jfif" alt="Key Art & Poster Designing" />
+          <span class="craft-tag-number">04</span>
+        </div>
+        <div class="craft-content">
+          <h3 class="craft-title">Key Art & Poster Design</h3>
+          <p class="craft-desc">Creating striking film identity, title typography, visual iconography, and high-impact festival posters.</p>
+          <div class="craft-badges-row">
+            <span class="craft-pill">Title Typography</span>
+            <span class="craft-pill">Key Art</span>
+            <span class="craft-pill">Visual Identity</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CINEMA INSPIRATIONS / FAVORITES
+       ========================================================================== -->
+  <section class="section-wrapper darker" id="favorites">
+    <div class="section-header">
+      <span class="section-eyebrow">// SHAPING THE SENSIBILITIES</span>
+      <h2 class="section-title">CINEMATIC INSPIRATIONS</h2>
+      <p class="section-subtitle">Masterpieces that continually ignite my storytelling fire and artistic philosophy.</p>
+    </div>
+
+    <div class="favs-grid">
+
+      <!-- FAV 1: SUPER DELUXE -->
+      <div class="fav-card-item">
+        <img src="assets/fav_super_deluxe.jfif" alt="Super Deluxe" />
+        <div class="fav-card-overlay">
+          <h3 class="fav-movie-title">Super Deluxe</h3>
+          <span class="fav-director-tag">Dir. Thiagarajan Kumararaja</span>
+          <p class="fav-takeaway-note">Masterclass in hyperlink narrative, philosophical absurdity, and unapologetic auteur visual design.</p>
+        </div>
+      </div>
+
+      <!-- FAV 2: KATTRADHU THAMIZH -->
+      <div class="fav-card-item">
+        <img src="assets/fav_kattradhu.jfif" alt="Kattradhu Thamizh" />
+        <div class="fav-card-overlay">
+          <h3 class="fav-movie-title">Kattradhu Thamizh</h3>
+          <span class="fav-director-tag">Dir. Ram</span>
+          <p class="fav-takeaway-note">Poetic melancholy, raw societal anger, and unflinching emotional vulnerability on cell-phone film.</p>
+        </div>
+      </div>
+
+      <!-- FAV 3: CITY OF GOD -->
+      <div class="fav-card-item">
+        <img src="assets/fav_city_of_god.jfif" alt="City of God" />
+        <div class="fav-card-overlay">
+          <h3 class="fav-movie-title">City of God</h3>
+          <span class="fav-director-tag">Dir. Fernando Meirelles</span>
+          <p class="fav-takeaway-note">Kinetic handheld camera, rapid rhythmic editing, and raw street-level storytelling energy.</p>
+        </div>
+      </div>
+
+      <!-- FAV 4: MUTHUKU MUTHAGA -->
+      <div class="fav-card-item">
+        <img src="assets/fav_muthukku.jpg" alt="Muthuku Muthaga" />
+        <div class="fav-card-overlay">
+          <h3 class="fav-movie-title">Muthuku Muthaga</h3>
+          <span class="fav-director-tag">Dir. Rasu Madhuravan</span>
+          <p class="fav-takeaway-note">Deeply rooted family emotional resonance, human warmth, and heartfelt native character writing.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PRODUCTION OFFICE & CONTACT
+       ========================================================================== -->
+  <section class="section-wrapper" id="contact">
+    <div class="section-header">
+      <span class="section-eyebrow">// PRODUCTION COLLABORATION</span>
+      <h2 class="section-title">LET'S CREATE CINEMA</h2>
+      <p class="section-subtitle">Open for feature discussions, short film collaborations, cinematography & editing projects.</p>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact-channels-grid">
+
+        <!-- EMAIL -->
+        <a href="mailto:mgunanidhi08@gmail.com" class="contact-card-box" id="copyEmailBtn" title="Click to email or copy">
+          <div class="contact-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <span class="contact-type">DIRECT INBOX</span>
+          <span class="contact-handle">mgunanidhi08@gmail.com</span>
+        </a>
+
+        <!-- INSTAGRAM -->
+        <a href="https://instagram.com/msk_studio" target="_blank" rel="noopener noreferrer" class="contact-card-box">
+          <div class="contact-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <span class="contact-type">INSTAGRAM</span>
+          <span class="contact-handle">@msk_studio</span>
+        </a>
+
+        <!-- YOUTUBE -->
+        <a href="https://youtube.com/@mayddyeditzz" target="_blank" rel="noopener noreferrer" class="contact-card-box">
+          <div class="contact-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </div>
+          <span class="contact-type">YOUTUBE CHANNEL</span>
+          <span class="contact-handle">mayddy Editzz</span>
+        </a>
+
+      </div>
+
+      <div class="quick-inquiry-box">
+        <h3>HAVE A SCRIPT OR A VISION?</h3>
+        <p>Whether you need a director to helm your project or a creative eye on the edit table, let's talk.</p>
+        <a href="mailto:mgunanidhi08@gmail.com?subject=Film%20Project%20Collaboration%20Inquiry%20-%20Gunanidhi%20M" class="btn-primary">
+          <span>Start Collaboration</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CINEMATIC FOOTER (END CREDITS ROLL)
+       ========================================================================== -->
+  <footer class="cinematic-footer">
+    <div class="credits-roll-box">
+      <div class="credits-title">GUNANIDHI M DIRECTORIALS</div>
+      <div class="credits-role">WRITTEN &bull; DIRECTED &bull; COMPOSED FOR THE SCREEN</div>
+    </div>
+    <div class="credits-copyright">
+      &copy; 2026 GUNANIDHI M (GUNA M). ALL RIGHTS RESERVED. CINEMA IN 24FPS.
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       CINEMA VIDEO LIGHTBOX MODAL
+       ========================================================================== -->
+  <div class="cinema-modal-backdrop" id="cinemaModal" role="dialog" aria-modal="true">
+    <div class="cinema-modal-container">
+      <div class="modal-header-bar">
+        <h3 class="modal-film-title" id="cinemaModalTitle">NOW SCREENING</h3>
+        <button class="modal-close-btn" id="closeCinemaModal" aria-label="Close screening">&times;</button>
+      </div>
+      <div class="modal-video-wrapper">
+        <iframe id="cinemaModalIframe" 
+                src="" 
+                title="Cinematic Screening" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- GSAP & ScrollTrigger CDN for high performance cinematic motion -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <!-- Main Cinematic Script -->
+  <script src="script.js"></script>
+</body>
+</html>
